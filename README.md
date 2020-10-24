@@ -22,9 +22,9 @@ The smart tag definition is: `@patch [argument/column id] [view id]`
 create view public.entity ...
 create view public.entity_children ...
 
-create type public.entity_children_update (id uuid, patch_arg json, ...)
-comment on type public.entity_children_update is '@patch patch_arg public.entity_children'
+create type public.entity_children_update (child_id uuid, child_patch json, ...)
+comment on type public.entity_children_update is '@patch child_patch public.entity_children'
 
-create function public.update_entity(id uuid, patch_arg json, update_children public.entity_children[]) ...
-comment on function public.update_entity() is '@patch patch_arg public.entity'
+create function public.update_entity(id uuid, entity_patch json, update_children public.entity_children[]) ...
+comment on function public.update_entity() is '@patch entity_patch public.entity'
 ```
