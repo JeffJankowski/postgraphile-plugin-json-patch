@@ -2,7 +2,9 @@ import { makePluginByCombiningPlugins } from 'postgraphile';
 import { ReplaceTypeWithPatchPlugin } from './ReplaceTypeWithPatchPlugin';
 import { ResolvePatchFieldsPlugin } from './ResolvePatchFieldsPlugin';
 
-export default makePluginByCombiningPlugins(
+const JsonPatchPlugin = makePluginByCombiningPlugins(
   ReplaceTypeWithPatchPlugin,
   ResolvePatchFieldsPlugin
 );
+
+export default JsonPatchPlugin;

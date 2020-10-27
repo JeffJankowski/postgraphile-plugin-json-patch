@@ -1,14 +1,23 @@
 {
   "name": "postgraphile-plugin-json-patch",
-  "version": "1.0.0",
-  "main": "src/index.ts",
+  "description": "Postgraphile plugin for patch-like update functionality via Postgres procedures with JSON arguments",
+  "author": "Jeff Jankowski <jeffrey.jankowski@gmail.com>",
+  "homepage": "https://github.com/JeffJankowski/postgraphile-plugin-json-patch",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "postgraphile": "^4.9.0",
+    "postgraphile": "^4.9.0"
+  },
+  "devDependencies": {
     "typescript": "^4.0.3"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node build/server.js"
+    "prepublishOnly": "tsc"
   }
 }

@@ -33,7 +33,10 @@ export const ReplaceTypeWithPatchPlugin: Plugin = (builder) =>
           )?.tags?.patch) ||
         pgIntrospection?.type?.tags?.patch;
 
-      if (patchTags) {
+      if (
+        patchTags &&
+        (typeof patchTags === 'string' || typeof patchTags === 'object')
+      ) {
         const patchFields = (Array.isArray(patchTags) ? patchTags : [patchTags])
           .map((fieldAndTable) => {
             const [arg, tableId] = fieldAndTable.split(' ');
