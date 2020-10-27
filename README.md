@@ -4,7 +4,7 @@
 
 This plugin let's us leverage postgraphile's auto-generated patch types for use in postgres procedures that update data in views which are not updateable by default. Any view with complex logic (eg. `JOIN`s) are not updateable, and therefore won't be included in postgraphile's default mutations.
 
-When a `@patch [arg] [view]` smart tag is included in a function or composite type definition, the type of the column/argument is replaced with the generated patch type of the specified view in the GraphQL schema. When the mutation is resolved, the incoming field for the argument are transformed back from the inflected name to the original column name. This allows the procedure logic to easily hydrate a view row.
+When a `@patch` smart tag is included in a function or composite type definition, the type of the column/argument is replaced with the generated patch type of the specified view in the GraphQL schema. When the mutation is resolved, the incoming field for the argument are transformed back from the inflected name to the original column name. This allows the procedure logic to easily hydrate a view row.
 
 ## Why?
 
